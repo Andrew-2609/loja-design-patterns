@@ -4,7 +4,7 @@ import com.ndrewcoding.loja.orcamento.Orcamento;
 
 import java.math.BigDecimal;
 
-public class ICMS implements TipoDeImposto {
+public class ICMS implements Imposto {
 
     @Override
     public BigDecimal calcular(Orcamento orcamento) {

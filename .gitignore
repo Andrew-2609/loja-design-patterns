@@ -1,0 +1,6 @@
+# IntelliJ IDEA
+.idea/
+loja-design-patterns.iml
+
+# Generated files
+out/

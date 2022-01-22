@@ -16,7 +16,7 @@ public class DescontoParaOrcamentoComMaisDeCincoItens extends Desconto {
             return orcamento.getValor().multiply(new BigDecimal("0.1"));
         }
 
-        return BigDecimal.ZERO;
+        return proximoDesconto.calcular(orcamento);
     }
 
 }

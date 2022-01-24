@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 
 public class Orcamento {
 
-    private final BigDecimal valor;
+    private BigDecimal valor;
     private final int quantidadeItens;
     private SituacaoOrcamento situacaoOrcamento;
 
@@ -15,6 +15,11 @@ public class Orcamento {
         this.valor = valor;
         this.quantidadeItens = quantidadeItens;
         this.situacaoOrcamento = new EmAnalise();
+    }
+
+    public void aplicarDescontoExtra() {
+        BigDecimal valorDescontoExtra = this.situacaoOrcamento.calcularValorDescontoExtra(this);
+        this.valor = this.valor.subtract(valorDescontoExtra);
     }
 
     public BigDecimal getValor() {

@@ -1,5 +1,6 @@
 package com.ndrewcoding.loja.orcamento;
 
+import com.ndrewcoding.loja.orcamento.situacao.EmAnalise;
 import com.ndrewcoding.loja.orcamento.situacao.SituacaoOrcamento;
 
 import java.math.BigDecimal;
@@ -13,6 +14,7 @@ public class Orcamento {
     public Orcamento(BigDecimal valor, int quantidadeItens) {
         this.valor = valor;
         this.quantidadeItens = quantidadeItens;
+        this.situacaoOrcamento = new EmAnalise();
     }
 
     public BigDecimal getValor() {

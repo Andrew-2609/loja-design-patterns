@@ -1,4 +1,4 @@
 package com.ndrewcoding.loja.orcamento.situacao;
 
-public class EmAnalise {
+public class EmAnalise extends SituacaoOrcamento {
 }

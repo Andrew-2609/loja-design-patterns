@@ -1,4 +1,4 @@
 package com.ndrewcoding.loja.orcamento.situacao;
 
-public class Finalizado {
+public class Finalizado extends SituacaoOrcamento {
 }

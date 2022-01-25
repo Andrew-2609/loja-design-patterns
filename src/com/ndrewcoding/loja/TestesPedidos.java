@@ -2,8 +2,11 @@ package com.ndrewcoding.loja;
 
 import com.ndrewcoding.loja.pedido.GeraPedido;
 import com.ndrewcoding.loja.pedido.GeraPedidoHandler;
+import com.ndrewcoding.loja.pedido.acao.EnviaEmail;
+import com.ndrewcoding.loja.pedido.acao.SalvaPedidoNoBancoDeDados;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 
 public class TestesPedidos {
 
@@ -13,7 +16,12 @@ public class TestesPedidos {
         int quantidadeItens = Integer.parseInt(args[2]);
 
         GeraPedido geraPedido = new GeraPedido(cliente, valorOrcamento, quantidadeItens);
-        GeraPedidoHandler geraPedidoHandler = new GeraPedidoHandler();
+        GeraPedidoHandler geraPedidoHandler = new GeraPedidoHandler(
+                Arrays.asList(
+                        new EnviaEmail(),
+                        new SalvaPedidoNoBancoDeDados()
+                )
+        );
         geraPedidoHandler.executar(geraPedido);
     }
 

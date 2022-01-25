@@ -1,6 +1,7 @@
 package com.ndrewcoding.loja.orcamento;
 
 import com.ndrewcoding.loja.orcamento.situacao.EmAnalise;
+import com.ndrewcoding.loja.orcamento.situacao.Finalizado;
 import com.ndrewcoding.loja.orcamento.situacao.SituacaoOrcamento;
 
 import java.math.BigDecimal;
@@ -32,6 +33,10 @@ public class Orcamento {
 
     public void finalizar() {
         this.situacaoOrcamento.finalizar(this);
+    }
+
+    public boolean isFinalizado() {
+        return this.situacaoOrcamento instanceof Finalizado;
     }
 
     public BigDecimal getValor() {

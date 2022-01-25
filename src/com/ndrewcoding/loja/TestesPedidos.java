@@ -9,11 +9,7 @@ import java.time.LocalDateTime;
 public class TestesPedidos {
 
     public static void main(String[] args) {
-        String cliente = "Andrew Monteiro";
-        LocalDateTime data = LocalDateTime.now();
-        Orcamento orcamento = new Orcamento(new BigDecimal("1000.0"), 4);
 
-        Pedido pedido = new Pedido(cliente, data, orcamento);
     }
 
 }

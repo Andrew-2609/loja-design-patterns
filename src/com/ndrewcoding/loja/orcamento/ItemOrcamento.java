@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class ItemOrcamento {
 
-    private BigDecimal valor;
+    private final BigDecimal valor;
 
     public ItemOrcamento(BigDecimal valor) {
         this.valor = valor;

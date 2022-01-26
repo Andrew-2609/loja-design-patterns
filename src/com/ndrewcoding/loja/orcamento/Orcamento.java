@@ -12,7 +12,7 @@ public class Orcamento {
 
     private BigDecimal valor;
     private SituacaoOrcamento situacaoOrcamento;
-    private List<ItemOrcamento> itens;
+    private final List<ItemOrcamento> itens;
 
     public Orcamento() {
         this.valor = BigDecimal.ZERO;

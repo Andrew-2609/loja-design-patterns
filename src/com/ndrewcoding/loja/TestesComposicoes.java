@@ -2,6 +2,7 @@ package com.ndrewcoding.loja;
 
 import com.ndrewcoding.loja.orcamento.ItemOrcamento;
 import com.ndrewcoding.loja.orcamento.Orcamento;
+import com.ndrewcoding.loja.orcamento.OrcamentoProxy;
 
 import java.math.BigDecimal;
 
@@ -16,7 +17,12 @@ public class TestesComposicoes {
         orcamentoNovo.adicionarItem(new ItemOrcamento(new BigDecimal("900")));
         orcamentoNovo.adicionarItem(orcamentoAntigo);
 
-        System.out.println("Orçamentos combinados: " + orcamentoNovo.getValor());
+        OrcamentoProxy proxy = new OrcamentoProxy(orcamentoNovo);
+
+        System.out.println("Orçamentos combinados: " + proxy.getValor());
+        System.out.println("Orçamentos combinados: " + proxy.getValor());
+        System.out.println("Orçamentos combinados: " + proxy.getValor());
+        System.out.println("Orçamentos combinados: " + proxy.getValor());
 
     }
 }

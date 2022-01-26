@@ -3,6 +3,7 @@ package com.ndrewcoding.loja;
 import com.ndrewcoding.loja.pedido.GeraPedido;
 import com.ndrewcoding.loja.pedido.GeraPedidoHandler;
 import com.ndrewcoding.loja.pedido.acao.EnviaEmail;
+import com.ndrewcoding.loja.pedido.acao.GeraLog;
 import com.ndrewcoding.loja.pedido.acao.SalvaPedidoNoBancoDeDados;
 
 import java.math.BigDecimal;
@@ -19,7 +20,8 @@ public class TestesPedidos {
         GeraPedidoHandler geraPedidoHandler = new GeraPedidoHandler(
                 Arrays.asList(
                         new EnviaEmail(),
-                        new SalvaPedidoNoBancoDeDados()
+                        new SalvaPedidoNoBancoDeDados(),
+                        new GeraLog()
                 )
         );
         geraPedidoHandler.executar(geraPedido);

@@ -1,5 +1,6 @@
 package com.ndrewcoding.loja.pedido;
 
+import com.ndrewcoding.loja.orcamento.ItemOrcamento;
 import com.ndrewcoding.loja.orcamento.Orcamento;
 import com.ndrewcoding.loja.pedido.acao.AcaoAposGerarPedido;
 
@@ -15,7 +16,12 @@ public class GeraPedidoHandler {
     }
 
     public void executar(GeraPedido dadosPedido) {
-        Orcamento orcamento = new Orcamento(dadosPedido.getValorOrcamento(), dadosPedido.getQuantidade());
+        Orcamento orcamento = new Orcamento();
+
+        ItemOrcamento item = new ItemOrcamento(dadosPedido.getValorOrcamento());
+
+        orcamento.adicionarItem(item);
+
         Pedido pedido = new Pedido(dadosPedido.getCliente(), LocalDateTime.now(), orcamento);
 
         acoes.forEach(acao -> acao.executarAcao(pedido));

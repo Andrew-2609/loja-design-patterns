@@ -2,7 +2,7 @@ package com.ndrewcoding.loja.orcamento;
 
 import java.math.BigDecimal;
 
-public class OrcamentoProxy extends Orcamento {
+public class OrcamentoProxy implements Orcavel {
 
     private BigDecimal valor;
     private final Orcamento orcamento;

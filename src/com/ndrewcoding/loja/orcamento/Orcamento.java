@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Orcamento {
+public class Orcamento implements  Orcavel {
 
     private BigDecimal valor;
     private SituacaoOrcamento situacaoOrcamento;

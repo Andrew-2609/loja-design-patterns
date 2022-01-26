@@ -7,8 +7,7 @@ public class OrcamentoProxy extends Orcamento {
     private BigDecimal valor;
     private final Orcamento orcamento;
 
-    public OrcamentoProxy(BigDecimal valor, Orcamento orcamento) {
-        this.valor = valor;
+    public OrcamentoProxy(Orcamento orcamento) {
         this.orcamento = orcamento;
     }
 

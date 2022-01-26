@@ -12,7 +12,7 @@ public class Orcamento implements  Orcavel {
 
     private BigDecimal valor;
     private SituacaoOrcamento situacaoOrcamento;
-    private final List<ItemOrcamento> itens;
+    private final List<Orcavel> itens;
 
     public Orcamento() {
         this.valor = BigDecimal.ZERO;
@@ -45,7 +45,7 @@ public class Orcamento implements  Orcavel {
         return itens.size();
     }
 
-    public void adicionarItem(ItemOrcamento itemOrcamento) {
+    public void adicionarItem(Orcavel itemOrcamento) {
         this.itens.add(itemOrcamento);
         this.valor = this.valor.add(itemOrcamento.getValor());
     }

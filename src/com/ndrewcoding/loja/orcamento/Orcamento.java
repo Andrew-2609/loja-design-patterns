@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Orcamento implements  Orcavel {
+public class Orcamento implements Orcavel {
 
     private BigDecimal valor;
     private SituacaoOrcamento situacaoOrcamento;
@@ -51,6 +51,11 @@ public class Orcamento implements  Orcavel {
     }
 
     public BigDecimal getValor() {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         return valor;
     }
 

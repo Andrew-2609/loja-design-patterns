@@ -5,17 +5,19 @@ import com.ndrewcoding.loja.orcamento.situacao.Finalizado;
 import com.ndrewcoding.loja.orcamento.situacao.SituacaoOrcamento;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Orcamento {
 
     private BigDecimal valor;
-    private final int quantidadeItens;
     private SituacaoOrcamento situacaoOrcamento;
+    private List<ItemOrcamento> itens;
 
-    public Orcamento(BigDecimal valor, int quantidadeItens) {
-        this.valor = valor;
-        this.quantidadeItens = quantidadeItens;
+    public Orcamento() {
+        this.valor = BigDecimal.ZERO;
         this.situacaoOrcamento = new EmAnalise();
+        this.itens = new ArrayList<>();
     }
 
     public void aplicarDescontoExtra() {
@@ -39,12 +41,17 @@ public class Orcamento {
         return this.situacaoOrcamento instanceof Finalizado;
     }
 
-    public BigDecimal getValor() {
-        return valor;
+    public int getQuantidadeDeItens() {
+        return itens.size();
     }
 
-    public int getQuantidadeItens() {
-        return quantidadeItens;
+    public void adicionarItem(ItemOrcamento itemOrcamento) {
+        this.itens.add(itemOrcamento);
+        this.valor = this.valor.add(itemOrcamento.getValor());
+    }
+
+    public BigDecimal getValor() {
+        return valor;
     }
 
     public SituacaoOrcamento getSituacaoOrcamento() {
